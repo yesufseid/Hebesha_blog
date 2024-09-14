@@ -7,7 +7,7 @@ type PostProps={
 type AutorProps={
     bio:string
     id:string
-    photo:Url
+    photo:{url:any}
     name:string
 }
 type CategoryProps={
@@ -21,11 +21,11 @@ type CategoryProps={
     slug:string
     title:string
     excerpt:string
-    featuredImage:Url
+    featuredImage:{url:any}
     category:CategoryProps
   }
 
   type EdageProps={
     edges:NodeProps
   }
-  export default PostProps
+  export default NodeProps

@@ -1,7 +1,5 @@
 import { gql, request } from 'graphql-request'
-import PostProps from '../types'
-import { log } from 'console';
-const GRAPHQL_INDPOINT=process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT
+const GRAPHQL_INDPOINT=process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || "hellow"
 
 export const Getpost=async()=>{
   console.log(GRAPHQL_INDPOINT);
@@ -35,7 +33,6 @@ export const Getpost=async()=>{
   }
 }`
 
-const results=request(GRAPHQL_INDPOINT,query)
-return results
-
+const results:any=await request(GRAPHQL_INDPOINT,query)
+return results.postsConnection.edges
 }
