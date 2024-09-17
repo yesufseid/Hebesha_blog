@@ -90,7 +90,7 @@ export const getCategories = async () => {
 export const getPostDetails = async (slug:string) => {
   const query = gql`
      query MyQuery {
-  post(where: {slug:react-testing}) {
+  post(where: {slug:"${slug}"}) {
     title
     excerpt
     featuredImage {
@@ -106,7 +106,7 @@ export const getPostDetails = async (slug:string) => {
     slug
     createdAt
     content {
-      raw
+       json
     }
     category {
       name
