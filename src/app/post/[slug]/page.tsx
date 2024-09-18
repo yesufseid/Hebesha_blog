@@ -7,10 +7,9 @@ import {PostProps} from "../../types"
 
 
 export default function Page({ params }: { params: { slug: string } }) { 
-  const [post,setPost]=useState({});
+  const [post,setPost]=useState<any>({});
   useEffect(() => {
-    getPostDetails(params.slug).then((posts:PostProps) => {
-      console.log(post);
+    getPostDetails(params.slug).then((posts:any) => {
       setPost(posts) 
     });
   }, []);
