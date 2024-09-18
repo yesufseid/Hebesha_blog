@@ -6,7 +6,7 @@ type PostProps={
   slug:string
   title:string
   excerpt:string
-  featuredImage:{url:any}
+  featuredImage:{url:string}
   category:[]
 }
 
@@ -34,4 +34,4 @@ type CategoryProps={
   type EdageProps={
     edges:NodeProps
   }
-  export type {NodeProps,PostProps}
+  export type {NodeProps,PostProps,AutorProps}
