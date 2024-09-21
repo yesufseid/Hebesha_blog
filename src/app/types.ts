@@ -8,6 +8,7 @@ type PostProps={
   excerpt:string
   featuredImage:{url:string}
   category:[]
+  content:{html:string}
 }
 
 type AutorProps={

@@ -13,6 +13,8 @@ export default function Details({slug}:Props) {
     const [post,setPost]=useState<PostProps>();
   useEffect(() => {
     getPostDetails(slug).then((posts:any) => {
+      console.log(posts);
+      
       setPost(posts) 
     });
   }, []);
@@ -26,12 +28,15 @@ export default function Details({slug}:Props) {
                   <Author author={post.author} />
             {/* <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
             <CommentsForm slug={post.slug} /> */}
-            <Comments slug={post.slug} /> 
+            {/* <Comments slug={post.slug} />  */}
              </> } 
           </div>
           <div className="col-span-1 lg:col-span-4">
             <div className="relative lg:sticky top-8">
-           
+              {post&&<>
+                <Postwidget slug={post.slug} categories={post.category}/>
+                <Categories />
+              </>}
             </div>
           </div>
         </div>

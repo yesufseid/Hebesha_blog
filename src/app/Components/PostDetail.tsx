@@ -1,6 +1,10 @@
 "use client"
 import moment from 'moment';
 import {PostProps} from "../types"
+import React from 'react';
+import TextHandler from '../utils';
+import parse from 'html-react-parser';
+
 
 type Props={
     post:PostProps
@@ -32,7 +36,7 @@ export default function PostDetail({post}:Props) {
           </div>
         </div>
         <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
-       
+        {parse(post.content.html)}
       </div>
     </div>
 

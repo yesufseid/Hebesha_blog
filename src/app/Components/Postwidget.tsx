@@ -6,12 +6,14 @@ import Link from 'next/link';
 
 import { getSimilarPosts, getRecentPosts } from '../Service';
 type Props={
-  categories?:{}
+  categories?:[]
   slug?:string
 }
 
 
 export default function Postwidget({ categories, slug}:Props) {
+  console.log(categories);
+  
   const [relatedPosts, setRelatedPosts] = useState([]);
   useEffect(() => {
     if (slug) {
