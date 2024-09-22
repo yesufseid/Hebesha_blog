@@ -3,6 +3,7 @@ import { Categories, Postwidget,PostDetail,Author,Comments } from '../../app/Com
 import {getPostDetails} from "../Service"
 import { useEffect,useState} from 'react';
 import {PostProps} from "../types"
+import  {AdjacentPosts} from "../Section"
 
 type Props={
     slug:string
@@ -26,8 +27,8 @@ export default function Details({slug}:Props) {
           <div className="col-span-1 lg:col-span-8">
             {post&& <>   <PostDetail  post={post}  /> 
                   <Author author={post.author} />
-            {/* <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
-            <CommentsForm slug={post.slug} /> */}
+            <AdjacentPosts slug={post.slug} createdAt={post.createdAt} /> 
+            {/* <CommentsForm slug={post.slug} />  */}
             {/* <Comments slug={post.slug} />  */}
              </> } 
           </div>
